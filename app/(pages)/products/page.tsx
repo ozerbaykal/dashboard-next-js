@@ -27,12 +27,12 @@ const Products = async () => {
 //List bileşenini async fonksiyon yaptık istek atılırken diğer Products da title in aynı şekilde kalıp loader ın sadece List componenti yerine basılmasını sağladık bu şekilde
 const List = async () => {
     const data = await getProducts()
-    await wait()
+    //await wait()
     return (
-        <div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {
                 data.map((product) => (
-                    <Card key={product.id} />
+                    <Card product={product} key={product.id} />
                 ))
             }
         </div>
