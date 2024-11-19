@@ -1,31 +1,17 @@
-"use client"
-import { Line } from "react-chartjs-2"
-import "chart.js/auto"
+import { getOrders } from "@/api"
+import Graf from "./Graf"
 
 
-const SalesGraph = () => {
-    const data = {
-        labels: ["12-07-2024", "14-07-2024", "14-07-2024"],
+const SalesGraph = async () => {
 
-        datasets: [
-            {
-                id: 1,
-                label: "Fiyat",
-                data: [2700, 3400, 4000]
-            },
-        ],
-    }
-
-
-
-
+    const data = await getOrders()
     return (
         <div className="mt-10 bg-white shadow rounded-lg p-5 ">
             <h2 className="font-semibold text-lg">
                 Satış Detayları
             </h2>
 
-            <Line data={data} />
+            <Graf />
 
 
         </div>
