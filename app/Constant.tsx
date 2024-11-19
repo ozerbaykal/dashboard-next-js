@@ -10,10 +10,7 @@ import {
 import { IoIosPricetags } from "react-icons/io";
 
 
-export type Icon = {
 
-    sections: string[]
-}
 
 export const sections = [
 
