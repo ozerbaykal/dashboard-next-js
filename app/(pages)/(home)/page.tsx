@@ -3,6 +3,9 @@ import icon1 from "@/assets/images/icon-1.png"
 import icon2 from "@/assets/images/icon-2.png"
 import icon3 from "@/assets/images/icon-3.png"
 import SalesGraph from "./SalesGraph"
+import { Suspense } from "react"
+import GraphLoader from "@/components/loaders/GraphLoader"
+
 
 const Home = () => {
   return (
@@ -17,7 +20,12 @@ const Home = () => {
 
       </section>
 
-      <SalesGraph />
+      <Suspense fallback={<GraphLoader />}>
+        <SalesGraph />
+
+
+      </Suspense>
+
     </div>
   )
 }

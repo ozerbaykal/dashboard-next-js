@@ -2,25 +2,28 @@
 
 import { Line } from "react-chartjs-2"
 import "chart.js/auto"
+import { Order } from "@/types"
 
 
 
-const Graf = () => {
-    const data = {
-        labels: ["12-07-2024", "14-07-2024", "14-07-2024"],
+const Graf = ({ data }: { data: Order[] }) => {
+    //grafik kütüphanesinin istediği veri formatı
+
+    const gdata = {
+        labels: data.map((i) => i.order_date),
 
         datasets: [
             {
                 id: 1,
                 label: "Fiyat",
-                data: [2700, 3400, 4000]
+                data: data.map((i) => i.total_price),
             },
         ],
     }
 
     return (
         <div>
-            <Line data={data} />
+            <Line data={gdata} />
         </div>
     )
 }
