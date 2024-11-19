@@ -37,7 +37,7 @@ export default function RootLayout({
 
           <div className="flex flex-col w-full ">
             <Header />
-            <main className="bg-[#F5F6FA] flex-1 p-10 text-4xl">{children}</main>
+            <main className="bg-[#F5F6FA] flex-1 p-5 ">{children}</main>
           </div>
         </div>
 

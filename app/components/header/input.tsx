@@ -1,7 +1,9 @@
 "use client"
 const Input = () => {
     return (
-        <div>input</div>
+        <div>
+            <input type="text" />
+        </div>
     )
 }
 
