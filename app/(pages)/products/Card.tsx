@@ -1,8 +1,10 @@
 import { Product } from "@/types";
 import Image from "next/image";
 import { nunito } from "@/layout";
+import DeleteButton from "./DeleteButton";
+import Link from "next/link";
 
-type Props = {
+export type Props = {
     product: Product;
 };
 
@@ -31,12 +33,11 @@ const Card = ({ product }: Props) => {
 
             </div>
             <div className="flex justify-between">
-                <button className="px-3 py-1 bg-[#E2EAF8] rounded-md hover:bg-[#9db0d1] transition ">
+                <Link href={`/products/${product.id}`} className="px-3 py-1 bg-[#E2EAF8] rounded-md hover:bg-[#9db0d1] transition ">
                     Düzenle
-                </button>
-                <button className="px-3 py-1 bg-[#f6adad] rounded-md hover:bg-[#df4a4a] transition">
-                    Sil
-                </button>
+                </Link>
+                <DeleteButton id={product.id} />
+
             </div>
         </div>
     );

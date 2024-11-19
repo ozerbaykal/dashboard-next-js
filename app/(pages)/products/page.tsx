@@ -4,14 +4,23 @@ import Card from "./Card"
 import { Suspense } from "react"
 import Loader from "@/components/loaders/Loader"
 import { wait } from "@/utils/wait"
+import Link from "next/link"
 
 const Products = async () => {
 
     return (
         <div>
-            {/* HOC */}
-            <Title>Ürünler</Title>
+            <div className="flex justify-between mb-3">
+                {/* HOC */}
+                <Title>Ürünler</Title>
+                <Link href="products/new" className="bg-green-500 py-2  px-3 rounded-lg text-white hover:bg-green-600 transition ">Ürün Ekle</Link>
 
+            </div>
+
+
+
+
+            {/* Sadece List compeneti için çalışacak loader */}
             <Suspense fallback={<Loader />}>
                 <List />
 

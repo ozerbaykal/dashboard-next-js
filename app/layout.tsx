@@ -4,6 +4,8 @@ import "./assets/styles/globals.css";
 import Navbar from "./components/navbar";
 import Header from "./components/header";
 import { Nunito_Sans } from "next/font/google";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 const geistSans = localFont({
   src: "./assets/fonts/GeistVF.woff",
@@ -47,6 +49,8 @@ export default function RootLayout({
             <main className="bg-[#F5F6FA] flex-1 p-5 ">{children}</main>
           </div>
         </div>
+
+        <ToastContainer />
 
       </body>
     </html>

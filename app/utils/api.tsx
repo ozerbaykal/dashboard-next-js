@@ -15,9 +15,36 @@ export const getOrders = async (): Promise<Order[]> => {
 
 }
 
+export const deleteProduct = async (id: number) => {
+    try {
+        const res = await fetch(`http://localhost:3090/products/${id}`,
+
+            {
+                method: "DELETE"
+            });
+        return res.json()
+    } catch (error) {
+        console.log(error)
+
+        throw Error("Ürün kaldırılırken bir sorun oluştu")
+
+
+    }
+
+}
+
+
+
+
+
+
 export const getProducts = async (): Promise<Product[]> => {
     try {
-        const res = await fetch("http://localhost:3090/products")
+        const res = await fetch("http://localhost:3090/products",
+            {
+                cache: "no-store"
+            }
+        )
         return res.json()
 
     } catch (error) {
