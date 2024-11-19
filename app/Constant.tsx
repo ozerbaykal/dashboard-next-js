@@ -45,7 +45,7 @@ export const sections = [
     {
         icon: <FaBox />,
         name: "Envanter",
-        url: "/products"
+
     },
     {
         icon: <FaChartArea />,

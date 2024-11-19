@@ -12,7 +12,7 @@ type Props = {
 }
 
 const NavLink = ({ item }: Props) => {
-
+    //mevcut sayfanın url'ini aldık
     const path = usePathname();
 
     const isActive = path === item.url
