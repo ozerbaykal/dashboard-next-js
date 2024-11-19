@@ -1,4 +1,4 @@
-import { getOrders } from "@/api"
+import { getOrders } from "@/utils/api"
 import Graf from "./Graf"
 import { wait } from "@/utils/wait"
 

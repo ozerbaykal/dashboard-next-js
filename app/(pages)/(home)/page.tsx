@@ -5,12 +5,13 @@ import icon3 from "@/assets/images/icon-3.png"
 import SalesGraph from "./SalesGraph"
 import { Suspense } from "react"
 import GraphLoader from "@/components/loaders/GraphLoader"
+import Title from "@/components/title"
 
 
 const Home = () => {
   return (
     <div>
-      <h1 className="font-semibold text-3xl"> Dashboard</h1>
+      <Title>Dashboard</Title>
 
       <section className=" grid grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
         <InfoCard icon={icon1} label="Toplam Kullanıcı" value={43343} />

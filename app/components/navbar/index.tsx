@@ -1,5 +1,4 @@
-import { sections } from "@/app/Constant";
-import Link from "next/link";
+import { sections } from "@/Constant";
 import { RxHamburgerMenu } from "react-icons/rx";
 import NavLink from "./NavLink";
 
@@ -7,7 +6,7 @@ import NavLink from "./NavLink";
 const Navbar = () => {
 
     return (
-        <nav className=" navbar text-2xl border flex flex-col text-gray-500  ">
+        <nav className=" navbar text-xl md:text-2xl border flex flex-col text-gray-600  ">
 
             <button className="grid place-items-center pt-5 text-2xl">
                 <input id="ham" type="checkbox" />
