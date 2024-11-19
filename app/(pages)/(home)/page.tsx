@@ -2,6 +2,7 @@ import InfoCard from "./InfoCard"
 import icon1 from "@/assets/images/icon-1.png"
 import icon2 from "@/assets/images/icon-2.png"
 import icon3 from "@/assets/images/icon-3.png"
+import SalesGraph from "./SalesGraph"
 
 const Home = () => {
   return (
@@ -15,6 +16,8 @@ const Home = () => {
         <InfoCard icon={icon3} label="Toplam Satış" value={45565} />
 
       </section>
+
+      <SalesGraph />
     </div>
   )
 }
