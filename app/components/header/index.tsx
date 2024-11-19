@@ -1,7 +1,7 @@
 
 const Header = () => {
     return (
-        <div className="text-2xl border shadow p-10 ">Header</div>
+        <div className="text-2xl border  p-5 ">Header</div>
     )
 }
 
