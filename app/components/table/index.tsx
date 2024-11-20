@@ -1,6 +1,7 @@
 import { getUsers } from "@/utils/api";
 import DeleteButton from "./DeleteButton";
 import { FaEye } from "react-icons/fa";
+import Link from "next/link";
 
 const Table = async () => {
     const data = await getUsers();
@@ -29,7 +30,7 @@ const Table = async () => {
                                 <td className="py-8 px-4">  {user.address.country}</td>
                                 <td className="py-8 px-4" >{user.address.city}</td>
                                 <td className="flex justify-center py-8 gap-2 ">
-                                    <button className="border shadow p-2 rounded-md hover:shadow-lg hover:bg-gray-200"><FaEye /></button>
+                                    <Link href={`?show=${user.id}`} className="border shadow p-2 rounded-md hover:shadow-lg hover:bg-gray-200 transition"><FaEye /></Link>
                                     <DeleteButton id={user.id} />
                                 </td>
 

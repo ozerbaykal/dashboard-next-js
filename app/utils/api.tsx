@@ -147,6 +147,23 @@ export const deleteUser = async (id: string): Promise<User[]> => {
 
 }
 
+export const getUserById = async (id: string): Promise<User> => {
+    try {
+        const res = await fetch(`http://localhost:3090/users/${id}`
+
+
+        )
+        return res.json()
+
+    } catch (error) {
+        console.log(error)
+
+        throw Error("Kullanıcı bulunamadı")
+
+
+    }
+
+}
 
 
 

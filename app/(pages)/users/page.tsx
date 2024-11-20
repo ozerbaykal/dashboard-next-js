@@ -2,8 +2,13 @@ import Loader from '@/components/loaders/Loader'
 import Table from '@/components/table'
 import Title from '@/components/title'
 import { Suspense } from 'react'
+import Modal from './modal'
 
-const Users = async () => {
+type Props = {
+    searchParams: Record<string, string> | undefined | null
+}
+
+const Users = async ({ searchParams }: Props) => {
 
     return (
         <div>
@@ -11,9 +16,11 @@ const Users = async () => {
             <Title>Kullanıcılar</Title>
             <Suspense fallback={<Loader />}>
                 <Table />
-
-
             </Suspense>
+
+            {/* eğer utl de show parametresi varsa ekrana modul renderla */}
+            {searchParams?.show && <Modal id={searchParams.show} />}
+
 
         </div>
     )
