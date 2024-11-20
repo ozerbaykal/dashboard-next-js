@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "1",
-      "name": "Apple iPhone 13",
+      "name": "Apple iPhone 16",
       "category": "Electronics",
       "price": "1299.99",
       "stock": "25",
@@ -10,7 +10,15 @@
       "image_url": "https://picsum.photos/seed/1/500/500",
       "rating": 4.8,
       "reviews_count": 102,
-      "brand": "Apple"
+      "brand": "Apple",
+      "productData": {
+        "name": "Apple iPhone 16",
+        "brand": "Apple",
+        "category": "Electronics",
+        "price": "1299.99",
+        "stock": "25",
+        "description": "6.1-inch display, A15 Bionic chip, dual 12MP camera system."
+      }
     },
     {
       "id": "2",
@@ -38,27 +46,15 @@
     },
     {
       "id": "4",
-      "name": "Nike Air Max 270",
+      "name": "Nike Air Max 271",
       "category": "Shoes",
-      "price": 149.99,
-      "stock": 50,
+      "price": "149.99",
+      "stock": "50",
       "description": "Breathable mesh upper, Max Air unit for responsive cushioning.",
       "image_url": "https://picsum.photos/seed/4/500/500",
       "rating": 4.7,
       "reviews_count": 210,
       "brand": "Nike"
-    },
-    {
-      "id": "5",
-      "name": "Adidas Ultraboost 22",
-      "category": "Shoes",
-      "price": 180,
-      "stock": 35,
-      "description": "Primeknit upper with Boost midsole for maximum energy return.",
-      "image_url": "https://picsum.photos/seed/5/500/500",
-      "rating": 4.8,
-      "reviews_count": 95,
-      "brand": "Adidas"
     },
     {
       "id": "6",

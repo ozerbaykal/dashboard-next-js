@@ -53,7 +53,7 @@ const Form = ({ editItem }: Props) => {
         } else {
             //editItem varsa ürünü düzenle
             //api isteğinde gönderilcek nesneyi ayarla
-            let updatedItem = { ...editItem, productData };
+            let updatedItem = { ...editItem, ...productData };
 
 
             editProduct(updatedItem).then(() => {

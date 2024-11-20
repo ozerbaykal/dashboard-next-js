@@ -1,4 +1,4 @@
-import { Order, Product } from "@/types"
+import { Order, Product, User } from "@/types"
 
 
 export const getOrders = async (): Promise<Order[]> => {
@@ -109,6 +109,25 @@ export const editProduct = async (data: Product) => {
     }
 
 }
+
+export const getUsers = async (): Promise<User[]> => {
+    try {
+        const res = await fetch(`http://localhost:3090/users`
+
+        )
+        return res.json()
+
+    } catch (error) {
+        console.log(error)
+
+        throw Error("Ürün Düzenlenirken bir sorun oluştu")
+
+
+    }
+
+}
+
+
 
 
 

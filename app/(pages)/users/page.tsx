@@ -1,8 +1,13 @@
-import React from 'react'
+import Title from '@/components/title'
+import { getUsers } from '@/utils/api'
 
-const Users = () => {
+const Users = async () => {
+    const data = await getUsers();
+
     return (
-        <div>Users</div>
+        <div>
+            <Title>Kullanıcılar</Title>
+        </div>
     )
 }
 
