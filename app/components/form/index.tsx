@@ -3,7 +3,7 @@
 import { inputs } from "@/Constant"
 import Input from "./Input"
 import { FormEvent } from "react"
-import { createProduct } from "@/utils/api"
+import { createProduct, editProduct } from "@/utils/api"
 import { Product } from "@/types"
 import { useRouter } from "next/navigation"
 import { toast } from "react-toastify"
@@ -17,38 +17,52 @@ type Props = {
 const Form = ({ editItem }: Props) => {
 
     const router = useRouter()
+
     //form gönderilince çalışcak fonksiyon
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
 
         //form örneği al
-
         const formData = new FormData(e.target as HTMLFormElement)
         const productData = Object.fromEntries(formData.entries())
 
-        //resim değişmesi için rasgele sayı belirle
-        const id = Math.round(Math.random() * 100)
-        //resim ekle
-        productData.image_url = `https://picsum.photos/seed/${id}/500/500`
+
+        //editItem yoksa yeni ürün oluştur
+        if (!editItem) {
+
+            //resim değişmesi için rasgele sayı belirle
+            const id = Math.round(Math.random() * 100)
+
+            //resim ekle
+            productData.image_url = `https://picsum.photos/seed/${id}/500/500`
+
+            //varsayılan rating ve yorum sayısını belirle
+            // @ts-ignore
+            productData.rating = 0;
+            // @ts-ignore
+            productData.reviews_count = 0;
+
+            //api ye ekleme isteği at
+            createProduct(productData as unknown as Product).then(() => {
+                router.push("/products");
+                router.refresh();
+                toast.success("Ürün başarıyla eklendi")
+
+            })
+        } else {
+            //editItem varsa ürünü düzenle
+            //api isteğinde gönderilcek nesneyi ayarla
+            let updatedItem = { ...editItem, productData };
 
 
-        //varsayılan rating ve yorum sayısını belirle
-        // @ts-ignore
-        productData.rating = 0;
-        // @ts-ignore
-        productData.reviews_count = 0;
+            editProduct(updatedItem).then(() => {
+                router.push("/products");
+                router.refresh();
+                toast.info("Ürün başarıyla düzenlendi")
 
-
-
-
-        //api ye ekleme isteği at
-        createProduct(productData as unknown as Product).then(() => {
-            router.push("/products");
-            router.refresh();
-            toast.success("Ürün başarıyla eklendi")
-
-        })
+            })
+        }
 
 
     }
@@ -57,7 +71,8 @@ const Form = ({ editItem }: Props) => {
         <form onSubmit={handleSubmit} className="flex flex-col  gap-5 mt-5 max-w-xl">
             {
                 inputs.map((item, key) => (
-                    <Input key={key} item={item} />
+                    //@ts-ignore
+                    <Input key={key} item={item} value={editItem[item.name]} />
 
 
                 ))

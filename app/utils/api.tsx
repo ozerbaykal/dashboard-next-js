@@ -90,5 +90,25 @@ export const getProductById = async (id: string): Promise<Product> => {
 
 }
 
+export const editProduct = async (data: Product) => {
+    try {
+        const res = await fetch(`http://localhost:3090/products/${data.id}`,
+            {
+                method: "PUT",
+                body: JSON.stringify(data)
+            }
+        )
+        return res.json()
+
+    } catch (error) {
+        console.log(error)
+
+        throw Error("Ürün Düzenlenirken bir sorun oluştu")
+
+
+    }
+
+}
+
 
 
