@@ -34,13 +34,9 @@ export const deleteProduct = async (id: number) => {
 }
 
 
-
-
-
-
 export const getProducts = async (): Promise<Product[]> => {
     try {
-        const res = await fetch("http://localhost:3090/products",
+        const res = await fetch("http://localhost:3090/products?_sort=-id",
             {
                 cache: "no-store"
             }
@@ -51,6 +47,27 @@ export const getProducts = async (): Promise<Product[]> => {
         console.log(error)
 
         throw Error("Ürün bilgileri alınırken sorun oluştu")
+
+
+    }
+
+}
+
+
+export const createProduct = async (data: Product) => {
+    try {
+        const res = await fetch("http://localhost:3090/products",
+            {
+                method: "POST",
+                body: JSON.stringify(data)
+            }
+        )
+        return res.json()
+
+    } catch (error) {
+        console.log(error)
+
+        throw Error("Ürün Eklenirken bir sorun oluştu")
 
 
     }
