@@ -112,7 +112,9 @@ export const editProduct = async (data: Product) => {
 
 export const getUsers = async (): Promise<User[]> => {
     try {
-        const res = await fetch(`http://localhost:3090/users`
+        const res = await fetch(`http://localhost:3090/users`, {
+            cache: "no-store"
+        }
 
         )
         return res.json()
@@ -121,6 +123,24 @@ export const getUsers = async (): Promise<User[]> => {
         console.log(error)
 
         throw Error("Ürün Düzenlenirken bir sorun oluştu")
+
+
+    }
+
+}
+
+export const deleteUser = async (id: string): Promise<User[]> => {
+    try {
+        const res = await fetch(`http://localhost:3090/users/${id}`,
+
+            {
+                method: "DELETE"
+            });
+        return res.json()
+    } catch (error) {
+        console.log(error)
+
+        throw Error("Kullancı kaldırılırken bir sorun oluştu")
 
 
     }

@@ -158,28 +158,6 @@
       },
       "phone": "+90 542 987 6543",
       "orders": []
-    },
-    {
-      "id": "4",
-      "name": "Ayşe Çelik",
-      "email": "ayse.celik@example.com",
-      "password": "hashed_password_4",
-      "address": {
-        "street": "Kordonboyu Mah. Sahil Yolu Cad. No: 22",
-        "city": "Antalya",
-        "postal_code": "07000",
-        "country": "Turkey"
-      },
-      "phone": "+90 546 345 6789",
-      "orders": [
-        {
-          "order_id": 1004,
-          "product_id": 5,
-          "quantity": 1,
-          "total_price": 180,
-          "order_date": "2024-09-01"
-        }
-      ]
     }
   ],
   "orders": [
