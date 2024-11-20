@@ -1,12 +1,20 @@
+import Loader from '@/components/loaders/Loader'
+import Table from '@/components/table'
 import Title from '@/components/title'
-import { getUsers } from '@/utils/api'
+import { Suspense } from 'react'
 
 const Users = async () => {
-    const data = await getUsers();
 
     return (
         <div>
+
             <Title>Kullanıcılar</Title>
+            <Suspense fallback={<Loader />}>
+                <Table />
+
+
+            </Suspense>
+
         </div>
     )
 }
