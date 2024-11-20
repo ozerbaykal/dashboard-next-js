@@ -1,5 +1,6 @@
 import Title from "@/components/title"
 import Form from "@/components/form"
+import { getProductById } from "@/utils/api"
 
 
 type Props = {
@@ -7,13 +8,24 @@ type Props = {
         slug: string
     }
 }
-const Page = ({ params }: Props) => {
+const Page = async ({ params }: Props) => {
     const isAdd = params.slug === "new"
+
+    //Eğer düzenleme modunaysak düzenlenecek elemanın verilerini api'dan almamız lazım
+    let editItem;
+    if (!isAdd) {
+        //api'dan alacağımız product bilgileri için url'den aldığımız (params.slug) id bilgisini bu işlemi gerçekleştirecek olan fonksiyona parametre olarak gönderiyoruz
+        editItem = await getProductById(params.slug)
+
+
+
+
+    }
 
     return (
         <div>
             <Title>{isAdd ? "Yeni Ürün Ekle" : "Ürünü Düzenle"}</Title>
-            <Form />
+            <Form editItem={editItem} />
 
         </div>
     )

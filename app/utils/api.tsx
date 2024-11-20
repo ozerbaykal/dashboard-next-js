@@ -73,3 +73,22 @@ export const createProduct = async (data: Product) => {
     }
 
 }
+export const getProductById = async (id: string): Promise<Product> => {
+    try {
+        const res = await fetch(`http://localhost:3090/products/${id}`
+
+        )
+        return res.json()
+
+    } catch (error) {
+        console.log(error)
+
+        throw Error("Ürün bulunmadı")
+
+
+    }
+
+}
+
+
+

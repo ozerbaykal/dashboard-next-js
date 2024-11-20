@@ -7,8 +7,14 @@ import { createProduct } from "@/utils/api"
 import { Product } from "@/types"
 import { useRouter } from "next/navigation"
 import { toast } from "react-toastify"
+import Link from "next/link"
 
-const Form = () => {
+type Props = {
+    editItem: Product | undefined,
+}
+
+
+const Form = ({ editItem }: Props) => {
 
     const router = useRouter()
     //form gönderilince çalışcak fonksiyon
@@ -48,7 +54,7 @@ const Form = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5 mt-5 max-w-xl">
+        <form onSubmit={handleSubmit} className="flex flex-col  gap-5 mt-5 max-w-xl">
             {
                 inputs.map((item, key) => (
                     <Input key={key} item={item} />
@@ -57,8 +63,8 @@ const Form = () => {
                 ))
             }
             <div className="flex justify-end gap-8">
-                <button type="button" className="bg-gray-300 py-2 px-5 rounded-lg hover:bg-gray-500 hover:text-white transition">Geri</button>
-                <button type="submit" className="bg-blue-300 py-2 px-5 rounded-lg hover:bg-blue-500 hover:text-white transition">Kaydet</button>
+                <Link href={"."} type="button" className="bg-gray-300 py-2 px-5 rounded-lg hover:bg-gray-500 hover:text-white transition">Geri</Link>
+                <button type="submit" className="bg-blue-300 py-2 px-5 rounded-lg hover:bg-blue-500 hover:text-white transition">{editItem ? "Kaydet" : "Oluştur"}</button>
 
             </div>
 
