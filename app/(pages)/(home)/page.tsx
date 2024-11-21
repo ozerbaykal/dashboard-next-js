@@ -12,6 +12,7 @@ import { getValues } from "@/utils/api"
 const Home = async () => {
   const data = getValues();
 
+  //ekrana basılacak olan infocard bişenlerine gönderilcek olan propları hazırladık
   const cards = [
     {
       icon: icon1,

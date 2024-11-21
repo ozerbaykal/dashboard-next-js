@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "1",
-      "name": "Apple iPhone 16 Pro",
+      "name": "Apple iPhone 16 Pro max",
       "category": "Electronics",
       "price": "1299.99",
       "stock": "25",
@@ -36,8 +36,8 @@
       "id": "3",
       "name": "Sony WH-1000XM5 Headphones",
       "category": "Accessories",
-      "price": 349.99,
-      "stock": 40,
+      "price": "549.99",
+      "stock": "45",
       "description": "Industry-leading noise cancellation, 30 hours battery life.",
       "image_url": "https://picsum.photos/seed/3/500/500",
       "rating": 4.9,
@@ -82,11 +82,11 @@
     },
     {
       "id": "2929",
-      "name": "Macbook",
+      "name": "Macbook Pro",
       "brand": "Apple",
       "category": "Teknoloji",
       "price": "500.000",
-      "stock": "23",
+      "stock": "34",
       "description": "Apple m1 çipli 16gb ram vs.",
       "image_url": "https://picsum.photos/seed/86/500/500",
       "rating": 0,
@@ -180,7 +180,8 @@
           "quantity": 1,
           "price": 1299.99
         }
-      ]
+      ],
+      "id": "770b"
     },
     {
       "order_id": 1002,
@@ -201,7 +202,8 @@
           "quantity": 2,
           "price": 149.99
         }
-      ]
+      ],
+      "id": "520f"
     },
     {
       "order_id": 1003,
@@ -222,7 +224,8 @@
           "quantity": 1,
           "price": 349.99
         }
-      ]
+      ],
+      "id": "51e1"
     },
     {
       "order_id": 1004,
@@ -243,7 +246,8 @@
           "quantity": 1,
           "price": 180
         }
-      ]
+      ],
+      "id": "c671"
     }
   ]
 }

@@ -72,7 +72,7 @@ const Form = ({ editItem }: Props) => {
             {
                 inputs.map((item, key) => (
                     //@ts-ignore
-                    <Input key={key} item={item} value={editItem[item.name]} />
+                    <Input key={key} item={item} value={editItem ? editItem[item.name] : ""} />
 
 
                 ))
