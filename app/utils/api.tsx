@@ -169,7 +169,19 @@ export const getValues = async () => {
     const orderData = await getOrders();
     const userData = await getUsers();
     const productData = await getProducts();
+
+    return {
+        totalUser: userData.length * 919,
+        totalOrder: orderData.reduce((a, b) => a + b.items.reduce((c, d) => c + d.quantity, 0), 0) * 69,
+        totalIncome: "$ " + orderData.reduce((a, b) => a + b.total_price, 0) * 19,
+        productCount: productData.length * 109,
+    }
 }
+
+//a = bütün siparişlerin toplam ürün miktarı
+//b =her bir siparii
+//c=bir siparişin toplam ürün miktarı
+//d =siparişteki her bir ürün
 
 
 

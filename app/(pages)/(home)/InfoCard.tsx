@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image"
 type Props = {
     label: string,
     icon: StaticImageData,
-    value: number
+    value: number | string
 
 }
 

@@ -6,18 +6,49 @@ import SalesGraph from "./SalesGraph"
 import { Suspense } from "react"
 import GraphLoader from "@/components/loaders/GraphLoader"
 import Title from "@/components/title"
+import { getValues } from "@/utils/api"
 
 
-const Home = () => {
+const Home = async () => {
+  const data = getValues();
+
+  const cards = [
+    {
+      icon: icon1,
+      label: "Toplam Kullanıcı",
+      value: (await data).totalUser
+    },
+    {
+      icon: icon2,
+      label: "Toplam Sipariş",
+      value: (await data).totalOrder,
+    },
+    {
+      icon: icon3,
+      label: "Toplam Satış",
+      value: (await data).totalIncome,
+    }, {
+      icon: icon2,
+      label: "Ürün Sayısı",
+      value: (await data).productCount,
+    }
+
+
+
+
+
+
+  ]
   return (
     <div>
       <Title>Dashboard</Title>
 
       <section className=" grid grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
-        <InfoCard icon={icon1} label="Toplam Kullanıcı" value={43343} />
-        <InfoCard icon={icon2} label="Toplam Sipariş" value={43453} />
-        <InfoCard icon={icon3} label="Toplam Satış" value={45555} />
-        <InfoCard icon={icon3} label="Toplam Satış" value={45565} />
+        {
+          cards.map((i, key) => (
+            <InfoCard key={key} icon={i.icon} label={i.label} value={i.value} />
+          ))
+        }
 
       </section>
 

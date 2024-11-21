@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Input from "./input"
-import Man from "@/assets/images/man.png"
+import Man from "@/assets/images/MAAN.webp"
 import { BiSolidBellRing } from "react-icons/bi"
 
 const Header = () => {
