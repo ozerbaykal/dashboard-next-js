@@ -39,9 +39,10 @@ const Modal = async ({ id }: { id: string }) => {
         },
         {
             label: "Sipariş Sayısı",
-            value: data.orders
+            value: data.orders.length
 
         },
+
 
 
     ]
@@ -49,17 +50,28 @@ const Modal = async ({ id }: { id: string }) => {
 
     return (
         <div className="fixed bg-black inset-0 z-[99] bg-opacity-50 grid place-items-center">
-            <div className="bg-white rounded-lg p-5">
+            <div className="bg-white rounded-lg px-8 py-6 ">
 
-                <Link href="/users">
-                    <MdClose />
-                </Link>
 
-                <div>
+                <div className="flex justify-end ">
+                    <Link href="/users " className=" shadow p-2 rounded-lg hover:shadow-lg hover:bg-gray-200 transition">
+                        <MdClose />
+                    </Link>
+
+                </div>
+
+
+
+                <div className="flex flex-col gap-5">
+                    <h1 className="text-4xl font-semibold text-center my-4">{data.name}</h1>
                     {
                         fields.map((field, key) => (
-                            <div key={key}>
+                            <div className="flex justify-between gap-11" key={key}>
+
                                 <span>{field.label}</span>
+                                <span className="font-semibold">{field.value}</span>
+
+
 
 
                             </div>
