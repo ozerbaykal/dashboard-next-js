@@ -2,7 +2,7 @@ export type Order = {
   order_id: number;
   user_id: number;
   order_date: string;
-  status: "Shipped " | "Deliverd" | "Processing";
+  status: "Shipped" | "Delivered" | "Processing";
   total_price: number;
   shipping_address: {
     street: string;

@@ -6,6 +6,7 @@ const Modal = async ({ id }: { id: string }) => {
 
     const data = await getUserById(id)
 
+    //ekrana basılacak olan modalın alanlarından bir dizi oluşturduk(kod tekrarı olmaması için)
     const fields = [
         {
             label: "Email",
@@ -50,7 +51,7 @@ const Modal = async ({ id }: { id: string }) => {
 
     return (
         <div className="fixed bg-black inset-0 z-[99] bg-opacity-50 grid place-items-center">
-            <div className="bg-white rounded-lg px-8 py-6 ">
+            <div className="bg-white rounded-lg px-8 py-6 pb-16">
 
 
                 <div className="flex justify-end ">

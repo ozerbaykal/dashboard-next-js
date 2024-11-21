@@ -165,6 +165,11 @@ export const getUserById = async (id: string): Promise<User> => {
 
 }
 
+export const getValues = async () => {
+    const orderData = await getOrders();
+    const userData = await getUsers();
+    const productData = await getProducts();
+}
 
 
 
